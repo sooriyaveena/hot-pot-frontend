@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Cormorant+Garamond:wght@700;900&display=swap");
+
+*{
+  font-family: "Poppins", sans-serif;
+}
+
+.admin-navbar-container{
+
+  margin: 12px;
+
+  background: white;
+
+  border-radius: 22px;
+
+  padding: 14px 24px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+
+.admin-left-section{
+  display:flex;
+  align-items:center;
+}
+
+.admin-title{
+
+  margin:0;
+
+  font-size:28px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-weight:900;
+
+  background: linear-gradient(
+    to right,
+    rgb(234,63,14),
+    rgb(247,107,21)
+  );
+
+  -webkit-background-clip:text;
+
+  -webkit-text-fill-color:transparent;
+}
+
+.admin-middle-section{
+  flex:1;
+
+  display:flex;
+
+  justify-content:center;
+}
+
+.admin-search{
+
+  width:350px;
+
+  border-radius:12px;
+}
+
+.admin-right-section{
+
+  display:flex;
+
+  align-items:center;
+
+  gap:20px;
+}
+
+.admin-notification-icon{
+
+  width:44px;
+
+  height:44px;
+
+  border-radius:50%;
+
+  border:2px solid #f1f1f1;
+
+  display:flex;
+
+  justify-content:center;
+
+  align-items:center;
+
+  font-size:18px;
+
+  background:white;
+
+  cursor:pointer;
+
+  transition:0.3s;
+}
+
+.admin-notification-icon:hover{
+
+  background:#fff4ec;
+}
+
+.admin-avatar{
+
+  background: linear-gradient(
+    to right,
+    #ff6b00,
+    #ff8c42
+  ) !important;
+
+  font-weight:600;
+
+  cursor:pointer;
+}

@@ -1,0 +1,177 @@
+.restaurant-page{
+  display:flex;
+  min-height:100vh;
+  background:#f5f7fa;
+}
+
+
+
+.restaurant-main{
+  flex:1 1;
+  margin-left:240px;
+  
+  background:#f5f7fa;
+
+  padding-top:0px;
+  margin-top: 0px;
+}
+
+.restaurant-content{
+  padding:30px;
+}
+
+
+
+.restaurant-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:30px;
+}
+
+.manage-text{
+  font-size:13px;
+  font-weight:600;
+  color:#ff6b00;
+  letter-spacing:1px;
+  margin-bottom:5px;
+}
+
+.restaurant-header h1{
+  font-size:32px;
+  font-weight:700;
+  color:#1f2937;
+  margin:0;
+}
+
+.restaurant-header p{
+  color:#6b7280;
+  margin-top:5px;
+}
+
+.add-btn{
+  height:45px;
+  border-radius:10px;
+  font-weight:600;
+  background:#ff6b00;
+  border:none;
+}
+
+
+
+.stats-row{
+  margin-bottom:25px;
+}
+
+.stats-card{
+  border-radius:18px;
+  border:none;
+  box-shadow:0 4px 14px rgba(0,0,0,0.08);
+}
+
+
+
+.filter-section{
+  display:flex;
+  gap:15px;
+  margin-bottom:25px;
+}
+
+.search-input{
+  flex:1;
+  border-radius:10px;
+}
+
+.status-filter{
+  width:180px;
+}
+
+
+
+.restaurant-table-card{
+  border-radius:18px;
+  border:none;
+  box-shadow:0 4px 14px rgba(0,0,0,0.08);
+}
+
+.ant-table{
+  border-radius:12px;
+}
+
+.ant-table-thead > tr > th{
+  background:#fafafa !important;
+  font-weight:700;
+  color:#374151;
+}
+
+
+
+.modal-input{
+  margin-bottom:15px;
+  height:45px;
+  border-radius:10px;
+}
+
+.switch-section{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+  padding:10px 0;
+}
+
+.submit-btn{
+  height:45px;
+  border-radius:10px;
+  background:#ff6b00;
+  border:none;
+  font-weight:600;
+}
+
+
+.ant-btn-primary{
+  background:#ff6b00;
+  border:none;
+}
+
+.ant-btn-primary:hover{
+  background:#ff7f24 !important;
+}
+
+
+
+@media(max-width:992px){
+
+  .restaurant-main{
+    margin-left:0;
+  }
+
+  .restaurant-content{
+    padding:20px;
+  }
+
+  .restaurant-header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:20px;
+  }
+
+  .filter-section{
+    flex-direction:column;
+  }
+
+  .status-filter{
+    width:100%;
+  }
+
+}
+
+@media(max-width:768px){
+
+  .stats-row{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+  }
+
+}

@@ -1,0 +1,24 @@
+.sidebar{
+
+  width:260px;
+
+  min-height:100vh;
+
+  background:white;
+
+  padding:20px;
+
+  box-sizing:border-box;
+
+  position:sticky;
+
+  top:0;
+
+  left:0;
+
+  border-right:1px solid #eee;
+}
+.sidebar-menu{
+
+  margin-top:40px;
+}

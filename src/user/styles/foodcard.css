@@ -1,0 +1,140 @@
+.food-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+
+  gap: 24px;
+
+  margin-top: 30px;
+}
+
+.food-card {
+  background: #fff;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+  transition: 0.3s;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+.food-card:hover {
+  transform: translateY(-5px);
+}
+
+.food-image {
+  width: 100%;
+
+  height: 180px;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+.food-content {
+  padding: 18px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+.food-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.food-top h3 {
+  margin: 0;
+
+  font-size: 20px;
+
+  font-weight: 600;
+
+  color: #222;
+}
+
+.food-price {
+  font-size: 18px;
+
+  font-weight: 700;
+
+  color: #ff5a00;
+}
+
+.food-description {
+  font-size: 14px;
+
+  color: #666;
+
+  line-height: 1.5;
+
+  min-height: 40px;
+}
+
+.food-bottom {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-top: auto;
+}
+
+.veg-tag,
+.nonveg-tag {
+  padding: 6px 14px;
+
+  border-radius: 20px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+.veg-tag {
+  background: #e8f8ec;
+
+  color: #1b8f3e;
+}
+
+.nonveg-tag {
+  background: #ffeaea;
+
+  color: #d62828;
+}
+
+.add-btn {
+  background: #ff5a00;
+
+  color: #fff;
+
+  border: none;
+
+  padding: 8px 18px;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.add-btn:hover {
+  background: #e14d00;
+}

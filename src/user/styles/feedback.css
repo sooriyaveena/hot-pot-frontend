@@ -1,0 +1,135 @@
+.feedback-page {
+  min-height: 100vh;
+
+  background: #f8f9fb;
+
+  padding-bottom: 50px;
+}
+
+.feedback-container {
+  max-width: 720px;
+
+  margin: 40px auto;
+
+  background: white;
+
+  padding: 40px;
+
+  border-radius: 28px;
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+  text-align: center;
+}
+
+.feedback-image {
+  width: 100%;
+
+  height: 280px;
+
+  object-fit: cover;
+
+  border-radius: 22px;
+
+  margin-bottom: 28px;
+}
+
+.feedback-container h1 {
+  font-size: 34px;
+
+  font-weight: 700;
+
+  color: #222;
+
+  margin-bottom: 8px;
+}
+
+.feedback-container p {
+  color: #777;
+
+  font-size: 16px;
+
+  margin-bottom: 25px;
+}
+
+.feedback-rating {
+  margin: 35px 0;
+}
+
+.feedback-rating h3 {
+  margin-bottom: 18px;
+
+  font-size: 22px;
+
+  color: #333;
+}
+
+.feedback-rating .ant-rate {
+  font-size: 36px;
+}
+
+.ant-input-textarea textarea {
+  border-radius: 16px !important;
+
+  padding: 16px !important;
+
+  font-size: 16px !important;
+
+  border: 1px solid #ddd !important;
+
+  resize: none;
+}
+
+.ant-input-textarea textarea:focus {
+  border-color: #ff5a00 !important;
+
+  box-shadow: 0 0 0 2px rgba(255, 90, 0, 0.12) !important;
+}
+
+.submit-feedback-btn {
+  margin-top: 28px;
+
+  width: 100%;
+
+  height: 54px;
+
+  border: none !important;
+
+  border-radius: 16px !important;
+
+  background: linear-gradient(135deg, #ff5a00, #ff7b00) !important;
+
+  color: white !important;
+
+  font-size: 18px;
+
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.submit-feedback-btn:hover {
+  transform: translateY(-2px);
+
+  opacity: 0.95;
+}
+
+@media (max-width: 768px) {
+  .feedback-container {
+    margin: 20px;
+
+    padding: 25px;
+  }
+
+  .feedback-image {
+    height: 220px;
+  }
+
+  .feedback-container h1 {
+    font-size: 28px;
+  }
+
+  .feedback-rating .ant-rate {
+    font-size: 30px;
+  }
+}

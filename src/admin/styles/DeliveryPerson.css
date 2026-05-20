@@ -1,0 +1,288 @@
+.dashboard-container{
+
+  display:flex;
+
+  background:#f4f7fb;
+
+  min-height:100vh;
+
+  width:100%;
+}
+
+
+
+.sidebar-container{
+
+  width:240px;
+
+  min-width:240px;
+
+  height:100vh;
+
+  background:#fff;
+
+  position:fixed;
+
+  top:0;
+
+  left:0;
+
+  z-index:1000;
+
+  overflow-y:auto;
+
+  border-right:1px solid #f0f0f0;
+}
+
+
+
+.deliveryperson-main{
+
+  margin-left:240px;
+
+  flex:1;
+
+  min-height:100vh;
+
+  overflow-x:hidden;
+
+  overflow-y:auto;
+}
+
+
+.deliveryperson-content{
+
+  padding:24px;
+
+  width:100%;
+
+  box-sizing:border-box;
+}
+
+
+
+.deliveryperson-header{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  gap:20px;
+
+  flex-wrap:wrap;
+
+  margin-bottom:28px;
+}
+
+.overview-text{
+
+  color:#ff6b00;
+
+  font-size:13px;
+
+  font-weight:700;
+
+  margin-bottom:8px;
+
+  letter-spacing:1px;
+}
+
+.deliveryperson-title{
+
+  font-size:42px;
+
+  font-weight:700;
+
+  margin:0;
+
+  color:#0f172a;
+}
+
+
+
+.ant-btn-primary{
+
+  background:#ff6b00 !important;
+
+  border:none !important;
+
+  border-radius:12px !important;
+
+  height:46px;
+
+  padding:0 22px;
+
+  font-weight:600;
+}
+
+
+.stats-row{
+
+  margin-bottom:28px;
+}
+
+.deliveryperson-card{
+
+  border:none !important;
+
+  border-radius:22px !important;
+
+  padding:18px;
+
+  min-height:180px;
+
+  box-shadow:
+  0 4px 14px rgba(0,0,0,0.06);
+}
+
+.deliveryperson-icon{
+
+  font-size:30px;
+
+  padding:16px;
+
+  border-radius:16px;
+
+  color:#fff;
+}
+
+.green-top .dashboard-icon{
+
+  background:#22c55e;
+}
+
+.orange-top .dashboard-icon{
+
+  background:#f97316;
+}
+
+.deliveryperson-card h1{
+
+  font-size:42px;
+
+  margin-top:20px;
+
+  margin-bottom:6px;
+
+  font-weight:700;
+}
+
+.deliveryperson-card p{
+
+  color:#64748b;
+
+  margin:0;
+}
+
+
+
+.deliveryperson-table-card{
+
+  border:none !important;
+
+  border-radius:22px !important;
+
+  overflow:hidden;
+
+  box-shadow:
+  0 4px 14px rgba(0,0,0,0.06);
+}
+
+.ant-table-wrapper{
+
+  overflow-x:auto;
+}
+
+.ant-table{
+
+  min-width:850px;
+}
+
+.ant-table-thead > tr > th{
+
+  background:#f8fafc !important;
+
+  color:#334155 !important;
+
+  font-weight:700;
+}
+
+.ant-table-tbody > tr:hover > td{
+
+  background:#fff7ed !important;
+}
+
+
+
+.ant-input-affix-wrapper{
+
+  height:48px;
+
+  border-radius:12px !important;
+}
+
+
+
+.ant-modal-content{
+
+  border-radius:22px !important;
+
+  padding:24px !important;
+}
+
+.modal-input{
+
+  height:48px;
+
+  margin-bottom:16px;
+
+  border-radius:12px;
+}
+
+.submit-btn{
+
+  height:48px;
+
+  border-radius:12px !important;
+
+  background:#ff6b00 !important;
+
+  border:none !important;
+
+  font-weight:600;
+}
+
+
+
+@media(max-width:992px){
+
+  .sidebar-container{
+
+    position:relative;
+
+    width:100%;
+
+    height:auto;
+  }
+
+  .deliveryperson-main{
+
+    margin-left:0;
+
+    width:100%;
+  }
+
+  .deliveryperson-content{
+
+    padding:18px;
+  }
+
+  .deliveryperson-header{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+  }
+}

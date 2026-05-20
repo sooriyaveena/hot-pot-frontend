@@ -1,0 +1,178 @@
+.orders-page{
+
+  display:flex;
+
+  background:#f4f4f4;
+
+  height:100vh;
+
+  width:100%;
+
+  overflow:hidden;
+}
+
+
+
+.sidebar-container{
+
+  width:280px;
+
+  min-width:280px;
+
+  height:100vh;
+
+  background:#fff;
+
+  position:fixed;
+
+  top:0;
+
+  left:0;
+
+  z-index:1000;
+
+  overflow-y:auto;
+
+  border-right:1px solid #f0f0f0;
+}
+
+
+
+.orders-main{
+
+  margin-left:280px;
+
+  flex:1;
+
+  height:100vh;
+
+  overflow-y:auto;
+
+  padding:24px;
+
+  box-sizing:border-box;
+  margin-top: 0px;
+   margin-left: 240px;
+}
+
+
+
+.orders-content{
+
+  width:100%;
+
+  box-sizing:border-box;
+}
+
+
+
+.orders-header{
+
+  display:flex;
+
+  justify-content:space-between;
+
+  align-items:center;
+
+  margin-bottom:25px;
+}
+
+.manage-text{
+
+  color:#ff5a1f;
+
+  font-size:13px;
+
+  font-weight:600;
+
+  letter-spacing:1px;
+
+  margin-bottom:12px;
+}
+
+.orders-title{
+
+  font-size:38px;
+
+  font-weight:700;
+
+  color:#1f1f1f;
+
+  margin:0;
+}
+
+.orders-subtitle{
+
+  color:#777;
+
+  font-size:15px;
+
+  margin-top:6px;
+}
+
+
+
+.status-card{
+
+  border-radius:18px !important;
+
+  border:none !important;
+
+  box-shadow:
+  0 4px 14px rgba(0,0,0,0.05);
+}
+
+.preparing-card{
+
+  background:#fff7e6;
+}
+
+.delivery-card{
+
+  background:#e6f4ff;
+}
+
+.success-card{
+
+  background:#f6ffed;
+}
+
+.cancel-card{
+
+  background:#fff1f0;
+}
+
+
+
+.filter-card{
+
+  margin-top:24px;
+
+  margin-bottom:24px;
+
+  border-radius:18px !important;
+
+  border:none !important;
+
+  box-shadow:
+  0 4px 14px rgba(0,0,0,0.05);
+}
+
+
+
+.orders-table-card{
+
+  border-radius:18px !important;
+
+  border:none !important;
+
+  box-shadow:
+  0 4px 14px rgba(0,0,0,0.05);
+
+  overflow-x:auto;
+}
+
+.ant-table-wrapper{
+
+  overflow-x:auto;
+}
