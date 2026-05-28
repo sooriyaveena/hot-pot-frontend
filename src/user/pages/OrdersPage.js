@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
-
 import axiosInstance from "../utils/axiosInstance";
 
 import {
@@ -14,48 +13,66 @@ import "../styles/orders.css";
 
 function OrdersPage() {
   const [orders, setOrders] = useState([]);
-  const navigate = useNavigate();
   const [selectedFilter, setSelectedFilter] = useState("ALL");
 
+  const navigate = useNavigate();
+
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("user"));
-
-    if (!user) return;
-
-    axiosInstance
-
-      .get(`/order/user/${user.userId}`)
-
-      .then((res) => {
-        console.log("ORDERS RESPONSE", res.data);
-
-        setOrders(res.data.data || []);
-      })
-
-      .catch((err) => {
-        console.log(err);
-      });
+    fetchOrders();
   }, []);
+
+  const fetchOrders = async () => {
+    try {
+      const user = JSON.parse(localStorage.getItem("user"));
+
+      if (!user) return;
+
+      const res = await axiosInstance.get(`/order/user/${user.userId}`);
+
+      console.log("ORDERS RESPONSE", res.data);
+
+      const ordersData = res.data.data || [];
+
+      const normalizedOrders = ordersData.map((order) => ({
+        ...order,
+        status: order.status?.toUpperCase(),
+      }));
+
+      console.log("IS ARRAY:", Array.isArray(ordersData));
+      console.log("TOTAL ORDERS:", ordersData.length);
+      console.log("ALL ORDERS:", normalizedOrders);
+
+      setOrders(normalizedOrders);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   const filters = ["ALL", "PLACED", "PREPARING", "DELIVERED", "CANCELLED"];
 
   const statusPriority = {
     PLACED: 1,
-
     PREPARING: 2,
-
     DELIVERED: 3,
-
     CANCELLED: 4,
   };
 
   const filteredOrders = (
     selectedFilter === "ALL"
       ? orders
-      : orders.filter((order) => order.status === selectedFilter)
-  ).sort((a, b) => statusPriority[a.status] - statusPriority[b.status]);
+      : orders.filter(
+          (order) =>
+            order.status?.toUpperCase() ===
+            selectedFilter.toUpperCase(),
+        )
+  ).sort(
+    (a, b) =>
+      (statusPriority[a.status?.toUpperCase()] || 99) -
+      (statusPriority[b.status?.toUpperCase()] || 99),
+  );
+
   const getStatusIcon = (status) => {
-    switch (status) {
+    switch (status?.toUpperCase()) {
       case "DELIVERED":
         return <CheckCircleOutlined className="green-icon" />;
 
@@ -66,9 +83,12 @@ function OrdersPage() {
         return <ClockCircleOutlined className="orange-icon" />;
     }
   };
+
   const cancelOrder = async (orderId) => {
     try {
-      const response = await axiosInstance.put(`/order/cancel/${orderId}`);
+      const response = await axiosInstance.put(
+        `/order/cancel/${orderId}`,
+      );
 
       console.log("CANCEL RESPONSE", response.data);
 
@@ -88,6 +108,7 @@ function OrdersPage() {
       alert("Failed to cancel order");
     }
   };
+
   return (
     <div className="orders-page">
       <Navbar />
@@ -103,7 +124,9 @@ function OrdersPage() {
           {filters.map((item) => (
             <button
               key={item}
-              className={selectedFilter === item ? "active-filter" : ""}
+              className={
+                selectedFilter === item ? "active-filter" : ""
+              }
               onClick={() => setSelectedFilter(item)}
             >
               {item}
@@ -112,14 +135,24 @@ function OrdersPage() {
         </div>
 
         {filteredOrders.length === 0 ? (
-          <div className="empty-orders">No Orders Found</div>
+          <div className="empty-orders">
+            No Orders Found
+          </div>
         ) : (
           <div className="orders-list">
+            {console.log("FILTERED ORDERS:", filteredOrders)}
+
             {filteredOrders.map((order) => {
-              console.log("ORDER", order);
+              console.log(
+                "RENDERING ORDER:",
+                order.orderId,
+              );
 
               return (
-                <div key={order.orderId} className="order-card">
+                <div
+                  key={order.orderId}
+                  className="order-card"
+                >
                   <div className="order-top">
                     <div className="restaurant-info">
                       <img
@@ -132,28 +165,33 @@ function OrdersPage() {
                       />
 
                       <div className="restaurant-details">
-                        <h2>{order.restaurant?.name || "Restaurant"}</h2>
+                        <h2>
+                          {order.restaurant?.name ||
+                            "Restaurant"}
+                        </h2>
 
                         <p>Order #{order.orderId}</p>
                       </div>
                     </div>
 
                     <div
-                      className={`status-badge
-                        ${order.status.toLowerCase()}`}
+                      className={`status-badge ${order.status?.toLowerCase()}`}
                     >
                       {getStatusIcon(order.status)}
 
-                      <span>{order.status}</span>
+                      <span>
+                        {order.status?.toUpperCase()}
+                      </span>
                     </div>
                   </div>
 
                   <div className="order-items">
                     {order.orderItems?.map((item) => {
-                      console.log("ITEM", item);
-
                       return (
-                        <div key={item.orderItemId} className="item-pill">
+                        <div
+                          key={item.orderItemId}
+                          className="item-pill"
+                        >
                           {item.item?.name ||
                             item.menuItem?.name ||
                             "Food Item"}{" "}
@@ -179,21 +217,28 @@ function OrdersPage() {
 
                   <div className="order-bottom">
                     <div>
-                      <span className="price-label">Total Amount</span>
+                      <span className="price-label">
+                        Total Amount
+                      </span>
 
-                      <h1 className="order-price">₹{order.totalAmount}</h1>
+                      <h1 className="order-price">
+                        ₹{order.totalAmount}
+                      </h1>
                     </div>
 
                     {order.status !== "DELIVERED" &&
                       order.status !== "CANCELLED" && (
                         <button
                           className="cancel-order-btn"
-                          onClick={() => cancelOrder(order.orderId)}
+                          onClick={() =>
+                            cancelOrder(order.orderId)
+                          }
                         >
                           Cancel Order
                         </button>
                       )}
                   </div>
+
                   {order.status === "DELIVERED" && (
                     <button
                       className="feedback-btn"
